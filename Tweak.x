@@ -12,3 +12,16 @@
   }
 }
 %end
+
+%hook SBSOSClawGestureObserver
+
+-(void)_presentSOSInterface {
+  SBCoverSheetPresentationManager *lockManager = (SBCoverSheetPresentationManager *)[%c(SBCoverSheetPresentationManager) sharedInstance];
+  if(![lockManager hasBeenDismissedSinceKeybagLock]) {
+
+  } else {
+    %orig;
+  }
+}
+
+%end
