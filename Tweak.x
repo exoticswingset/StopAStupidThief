@@ -18,11 +18,9 @@
 // iOS 13 to prevent normal power menu from showing
 
 %hook SBPowerDownViewController
-
 -(BOOL)_canShowWhileLocked {
   return NO;
 }
-
 %end
 
 // Prevents the emergency SOS power down menu from showing on notched devices when holding volume + power
