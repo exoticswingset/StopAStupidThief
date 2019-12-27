@@ -1,5 +1,5 @@
 @interface SBCoverSheetPresentationManager
--(bool)hasBeenDismissedSinceKeybagLock;
+-(bool)hasBeenDismissedSinceKeybagLock; // Using this to check when the device is on the lock screen.
 +(id)sharedInstance;
 @end
 
@@ -15,7 +15,7 @@
 }
 %end
 
-// iOS 13 to prevent normal power menu from showing
+// iOS 13 to prevent normal power menu from showing but causes a freeze for 10-15 seconds or less (not intentional, it's a issue with this method).
 
 %hook SBPowerDownViewController
 -(BOOL)_canShowWhileLocked {
